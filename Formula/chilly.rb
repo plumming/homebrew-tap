@@ -2,16 +2,16 @@
 class Chilly < Formula
   desc "Have you got the chillys?"
   homepage ""
-  version "0.0.9"
+  version "0.0.10"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/plumming/chilly/releases/download/0.0.9/chilly-darwin-amd64.tar.gz"
-    sha256 "da099b7ab7a6c6e028cc07fbef63aa432e5431562af94e78428a2b4d480b7523"
+    url "https://github.com/plumming/chilly/releases/download/0.0.10/chilly-darwin-amd64.tar.gz"
+    sha256 "36c81885ae4d26e1647ad4b3f6a7eb042cf2c91551382719b8ffa4992aecb72e"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/plumming/chilly/releases/download/0.0.9/chilly-linux-amd64.tar.gz"
-      sha256 "de3356c551b83bca1955bc9e6c48fc964d40f1de541259db6735ab1e38da5474"
+      url "https://github.com/plumming/chilly/releases/download/0.0.10/chilly-linux-amd64.tar.gz"
+      sha256 "e70d92ea8cd1e0223dba1a16d780113357a7fb68a63798c72bc709daa755426b"
     end
   end
 
