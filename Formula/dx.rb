@@ -2,16 +2,16 @@
 class Dx < Formula
   desc "Have you got the chillys?"
   homepage ""
-  version "0.0.11"
+  version "0.0.12"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/plumming/chilly/releases/download/0.0.11/chilly-darwin-amd64.tar.gz"
-    sha256 "dd718a49e3bcfefc3fb53496ec7081dbc9758a0e1a4839d4cbbdab00d7c32478"
+    url "https://github.com/plumming/dx/releases/download/0.0.12/dx-darwin-amd64.tar.gz"
+    sha256 "644cbb7c707ee8417f20fe814b417e6ffb9e4a31961216a48eb6cd937003db09"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/plumming/chilly/releases/download/0.0.11/chilly-linux-amd64.tar.gz"
-      sha256 "e9979bb116da09f093c3a4b970c4d9340f4a90825d2ac24c3c3496f9503a9220"
+      url "https://github.com/plumming/dx/releases/download/0.0.12/dx-linux-amd64.tar.gz"
+      sha256 "a517dd065b0be2c1cae11486948c18ff8b440bdb33d7d9b910f739c4374470dd"
     end
   end
 
