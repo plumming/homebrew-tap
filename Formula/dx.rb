@@ -2,16 +2,16 @@
 class Dx < Formula
   desc "Have you got the chillys?"
   homepage ""
-  version "0.0.17"
+  version "0.0.18"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/plumming/dx/releases/download/0.0.17/dx-darwin-amd64.tar.gz"
-    sha256 "4f1270635069e3f54a73d9f9b530d34ae5cbaea418dd9b85fcc7caae47ad4ddc"
+    url "https://github.com/plumming/dx/releases/download/0.0.18/dx-darwin-amd64.tar.gz"
+    sha256 "1cb1bc0e0355ffe72d60dfd45c0543164e4b0fd9529a94d8ea5bd1c3cab16672"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/plumming/dx/releases/download/0.0.17/dx-linux-amd64.tar.gz"
-    sha256 "cb8f94376f8a1f52494368537b5696178a84dfc9c7109d8405be586b7b9f30a7"
+    url "https://github.com/plumming/dx/releases/download/0.0.18/dx-linux-amd64.tar.gz"
+    sha256 "f4f0af22be22df0c15af1066914abe176d59913ef104f0cf77012dde6d3de5b6"
   end
 
   def install
