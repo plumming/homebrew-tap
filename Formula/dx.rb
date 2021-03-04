@@ -5,24 +5,24 @@
 class Dx < Formula
   desc "Have you got the chillys?"
   homepage ""
-  version "0.0.22"
+  version "0.0.23"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/plumming/dx/releases/download/0.0.22/dx-darwin-amd64.tar.gz"
-    sha256 "c30161f5588759ad48cd8a5ae7b4765775845ce5a740a79ce78f47e909774b5e"
+    url "https://github.com/plumming/dx/releases/download/0.0.23/dx-darwin-amd64.tar.gz"
+    sha256 "22a3f066dca47ed9f88c2461c3bbd634e684831aac1c69e80cc80defeb08e5bb"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/plumming/dx/releases/download/0.0.22/dx-darwin-arm64.tar.gz"
-    sha256 "4b883b89ed099e797a9d9d6c6ec6cd52408e23522ca23ce68f58c1bdb5de3143"
+    url "https://github.com/plumming/dx/releases/download/0.0.23/dx-darwin-arm64.tar.gz"
+    sha256 "a4c5920d06f98efc45c4f0b70c69e1b8a63862505eee5c86486b523c0aa67e7a"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/plumming/dx/releases/download/0.0.22/dx-linux-amd64.tar.gz"
-    sha256 "2474f4bb62170481ed8054e3a4f1e68790b937766e8c58e5ce67066a9cfe2f87"
+    url "https://github.com/plumming/dx/releases/download/0.0.23/dx-linux-amd64.tar.gz"
+    sha256 "36afa82532a3df1afb6dd9c3ffd38aff93d2eb56b5241aab40a067d069d515fb"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/plumming/dx/releases/download/0.0.22/dx-linux-arm64.tar.gz"
-    sha256 "92ef41c82f19186c5d2f1458dfa25fc6718adbf8fa21b52bd3e2b777aa567bd1"
+    url "https://github.com/plumming/dx/releases/download/0.0.23/dx-linux-arm64.tar.gz"
+    sha256 "43bfe788a7a06ba8f104fb60a7ba3a0e99827c4cbe983512f20018f5cd7251c4"
   end
 
   def install
