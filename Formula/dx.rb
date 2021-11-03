@@ -5,28 +5,44 @@
 class Dx < Formula
   desc "Have you got the chillys?"
   homepage ""
-  version "0.0.24"
-  bottle :unneeded
+  version "0.1.0"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/plumming/dx/releases/download/0.0.24/dx-darwin-amd64.tar.gz"
-    sha256 "ea4303c4aaf46784569929f9c9498f8913c3ce60d9e9cdcc92f955f516673d25"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/plumming/dx/releases/download/0.0.24/dx-darwin-arm64.tar.gz"
-    sha256 "5685c71cd7c577a6b8b06b00e78669153267c2898268ff7c7f468a5c1a381c98"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/plumming/dx/releases/download/0.0.24/dx-linux-amd64.tar.gz"
-    sha256 "2f4f5ada632e7ac5f3ea88e1be529946ba0fbe42fa2d325aa2c2333ea5f2d5bf"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/plumming/dx/releases/download/0.0.24/dx-linux-arm64.tar.gz"
-    sha256 "ea2a00013455b207ad8bd34d9ac12849345d4b70b5c02b6d97e56474c6e72490"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/plumming/dx/releases/download/0.1.0/dx-darwin-amd64.tar.gz"
+      sha256 "fd7ba1c3ac02779a1dd43d3db640c97e2ac83214eb5afb4569028ea0f1e6fb38"
+
+      def install
+        bin.install "dx"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/plumming/dx/releases/download/0.1.0/dx-darwin-arm64.tar.gz"
+      sha256 "c1a2be2dcab2055aec221badf6c8eaf1086d13e435d0fd19815e94ce87b4cc26"
+
+      def install
+        bin.install "dx"
+      end
+    end
   end
 
-  def install
-    bin.install "dx"
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/plumming/dx/releases/download/0.1.0/dx-linux-arm64.tar.gz"
+      sha256 "1ec6e2c616b592a272775a6f924f6296616cda255d6a445e9dfe834c1f713b45"
+
+      def install
+        bin.install "dx"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/plumming/dx/releases/download/0.1.0/dx-linux-amd64.tar.gz"
+      sha256 "dd68a7af31369af7694f18045b78073103b4032a990722f5bc925a7451e1d28b"
+
+      def install
+        bin.install "dx"
+      end
+    end
   end
 
   def caveats; <<~EOS
