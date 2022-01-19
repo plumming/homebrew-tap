@@ -5,20 +5,20 @@
 class Dx < Formula
   desc "Have you got the chillys?"
   homepage ""
-  version "0.2.0"
+  version "0.2.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/plumming/dx/releases/download/0.2.0/dx-darwin-amd64.tar.gz"
-      sha256 "e6b23612ec0c88fe21982f8f7d056ff6e60ebbb7e3f126bd007317c0174d930a"
+      url "https://github.com/plumming/dx/releases/download/0.2.1/dx-darwin-amd64.tar.gz"
+      sha256 "c983b81859e813ee93e2b50013aec5fe96ff15eb5f4a51c92a88113d11947189"
 
       def install
         bin.install "dx"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/plumming/dx/releases/download/0.2.0/dx-darwin-arm64.tar.gz"
-      sha256 "2954a7187518fc9d97384734397aed54b1cacd38610b0d5c9aef8f6a5db8a5f4"
+      url "https://github.com/plumming/dx/releases/download/0.2.1/dx-darwin-arm64.tar.gz"
+      sha256 "5e5490afadee17df6b08518d2a3e64c716799abcd96d0b88106d6446bda1d51f"
 
       def install
         bin.install "dx"
@@ -28,16 +28,16 @@ class Dx < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/plumming/dx/releases/download/0.2.0/dx-linux-arm64.tar.gz"
-      sha256 "d72f0d2f5da94141fb4dafa58ac348995360dbbda8697347a4f08c251b76b4d9"
+      url "https://github.com/plumming/dx/releases/download/0.2.1/dx-linux-arm64.tar.gz"
+      sha256 "0d67ae0d7bb7da22f377dd0c92d665a25a91cbcc788e9ccea96af96b5a39828d"
 
       def install
         bin.install "dx"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/plumming/dx/releases/download/0.2.0/dx-linux-amd64.tar.gz"
-      sha256 "0275cb78698332adb5699049d0cbdf58b0f3c6eebf8fa8dbdc06daad05f7ff12"
+      url "https://github.com/plumming/dx/releases/download/0.2.1/dx-linux-amd64.tar.gz"
+      sha256 "1bb45841de031062f77a1c339b9e16c79377545d29c52038656121ff19578838"
 
       def install
         bin.install "dx"
