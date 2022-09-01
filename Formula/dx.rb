@@ -5,20 +5,20 @@
 class Dx < Formula
   desc "Have you got the chillys?"
   homepage ""
-  version "0.2.3"
+  version "0.2.4"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/plumming/dx/releases/download/0.2.3/dx-darwin-amd64.tar.gz"
-      sha256 "aa3d566891977aac16a238c4548510388809ea30766249fd5fb2bbe562de2b41"
+      url "https://github.com/plumming/dx/releases/download/0.2.4/dx-darwin-amd64.tar.gz"
+      sha256 "4291d58eb1d24823a88aa249d8f512e323c9a539adfc0698ec4e1268f8984337"
 
       def install
         bin.install "dx"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/plumming/dx/releases/download/0.2.3/dx-darwin-arm64.tar.gz"
-      sha256 "8f5352312c3132db5063bfcf9c090be54fc4847916b691b0e87d3131a9bf2364"
+      url "https://github.com/plumming/dx/releases/download/0.2.4/dx-darwin-arm64.tar.gz"
+      sha256 "2b9118c90d2ad8579ababba502479ee51e2c13f868ff8f1d0908492d53873d2b"
 
       def install
         bin.install "dx"
@@ -27,17 +27,17 @@ class Dx < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/plumming/dx/releases/download/0.2.3/dx-linux-amd64.tar.gz"
-      sha256 "1711892dfdac4169c151110a41c916650066113f03bb242f4b454ac938b3d0bc"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/plumming/dx/releases/download/0.2.4/dx-linux-arm64.tar.gz"
+      sha256 "29b0a4d063252c9ded2c2e746650a88a2a1240f3a2fde84dee79b9eb869e4e51"
 
       def install
         bin.install "dx"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/plumming/dx/releases/download/0.2.3/dx-linux-arm64.tar.gz"
-      sha256 "f5f4f5184fc5a96bb5fb05ef627367dbb75cb1875b063ed60493c28defb9f8fa"
+    if Hardware::CPU.intel?
+      url "https://github.com/plumming/dx/releases/download/0.2.4/dx-linux-amd64.tar.gz"
+      sha256 "8a9473a0cb76f843d5da686ba241ce72baa8740ce305bbf9b18fc488032da2e3"
 
       def install
         bin.install "dx"
@@ -45,8 +45,9 @@ class Dx < Formula
     end
   end
 
-  def caveats; <<~EOS
-    How to use this binary
-  EOS
+  def caveats
+    <<~EOS
+      How to use this binary
+    EOS
   end
 end
