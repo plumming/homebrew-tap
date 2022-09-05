@@ -5,20 +5,20 @@
 class Dx < Formula
   desc "Have you got the chillys?"
   homepage ""
-  version "0.2.4"
+  version "0.2.5"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/plumming/dx/releases/download/0.2.4/dx-darwin-amd64.tar.gz"
-      sha256 "4291d58eb1d24823a88aa249d8f512e323c9a539adfc0698ec4e1268f8984337"
+    if Hardware::CPU.arm?
+      url "https://github.com/plumming/dx/releases/download/0.2.5/dx-darwin-arm64.tar.gz"
+      sha256 "e2b8e56b412e4a3225aa34a67651be8e69541ddf80205cc7dbcd9cb4f48a1fa6"
 
       def install
         bin.install "dx"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/plumming/dx/releases/download/0.2.4/dx-darwin-arm64.tar.gz"
-      sha256 "2b9118c90d2ad8579ababba502479ee51e2c13f868ff8f1d0908492d53873d2b"
+    if Hardware::CPU.intel?
+      url "https://github.com/plumming/dx/releases/download/0.2.5/dx-darwin-amd64.tar.gz"
+      sha256 "a0f5d6e4726c0c608a0e7a2f244fce9324e4cf9f6c86aedfd171140a41e8f770"
 
       def install
         bin.install "dx"
@@ -27,17 +27,17 @@ class Dx < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/plumming/dx/releases/download/0.2.4/dx-linux-arm64.tar.gz"
-      sha256 "29b0a4d063252c9ded2c2e746650a88a2a1240f3a2fde84dee79b9eb869e4e51"
+    if Hardware::CPU.intel?
+      url "https://github.com/plumming/dx/releases/download/0.2.5/dx-linux-amd64.tar.gz"
+      sha256 "2a75ec3d71e4da01074877c2876be8ed3e488b8e450a8d03789744fb09ca2fc8"
 
       def install
         bin.install "dx"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/plumming/dx/releases/download/0.2.4/dx-linux-amd64.tar.gz"
-      sha256 "8a9473a0cb76f843d5da686ba241ce72baa8740ce305bbf9b18fc488032da2e3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/plumming/dx/releases/download/0.2.5/dx-linux-arm64.tar.gz"
+      sha256 "e42dc90535d6d5d14f74dc0b291c99447bc6c8e5e87bb44fec8a4d11912c6f69"
 
       def install
         bin.install "dx"
