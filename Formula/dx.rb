@@ -5,20 +5,20 @@
 class Dx < Formula
   desc "Have you got the chillys?"
   homepage ""
-  version "0.5.5"
+  version "0.5.6"
 
   on_macos do
-    on_intel do
-      url "https://github.com/plumming/dx/releases/download/0.5.5/dx-darwin-amd64.tar.gz"
-      sha256 "00460483a3cfcf912cc373958b37c3e8d97dc113245a8d78179e28e8eba090c2"
+    if Hardware::CPU.intel?
+      url "https://github.com/plumming/dx/releases/download/0.5.6/dx-darwin-amd64.tar.gz"
+      sha256 "b96a066caf4beda54f4b1e1c2a70d80005c5fecb1a6fa7fd60fe394a6b2a0c10"
 
       def install
         bin.install "dx"
       end
     end
-    on_arm do
-      url "https://github.com/plumming/dx/releases/download/0.5.5/dx-darwin-arm64.tar.gz"
-      sha256 "f72cc2b73c3b960b7fa42465f84fec2bf4a336c37b86ca1e7fe944a8c868fb77"
+    if Hardware::CPU.arm?
+      url "https://github.com/plumming/dx/releases/download/0.5.6/dx-darwin-arm64.tar.gz"
+      sha256 "e6e3f26d8a0d6d76bf8925954fd5f985c9920833d5ec368fbbe20a5951c7c96b"
 
       def install
         bin.install "dx"
@@ -27,24 +27,18 @@ class Dx < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/plumming/dx/releases/download/0.5.5/dx-linux-amd64.tar.gz"
-        sha256 "a2ac1038cc39896df10a5d692d3b1c75f854968d9bd6a7ead0e4122c09fd8351"
-
-        def install
-          bin.install "dx"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/plumming/dx/releases/download/0.5.6/dx-linux-amd64.tar.gz"
+      sha256 "5d7c0100f131e0b484e22fb2c6b774571d728897ddcb63bce91646b1b1605b30"
+      def install
+        bin.install "dx"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/plumming/dx/releases/download/0.5.5/dx-linux-arm64.tar.gz"
-        sha256 "16a736b332cb811e99d39228c2605358378273175498ad976c52fd51e85e9b4a"
-
-        def install
-          bin.install "dx"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/plumming/dx/releases/download/0.5.6/dx-linux-arm64.tar.gz"
+      sha256 "ff60d2b7caf5f57a40e43c529ae93fbedec49ee94a29e0d450eee1ea5275d2d8"
+      def install
+        bin.install "dx"
       end
     end
   end
