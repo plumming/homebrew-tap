@@ -5,22 +5,22 @@
 class Dx < Formula
   desc "Have you got the chillys?"
   homepage ""
-  version "0.5.6"
+  version "0.6.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/plumming/dx/releases/download/0.5.6/dx-darwin-amd64.tar.gz"
-      sha256 "b96a066caf4beda54f4b1e1c2a70d80005c5fecb1a6fa7fd60fe394a6b2a0c10"
+      url "https://github.com/plumming/dx/releases/download/0.6.1/dx-darwin-amd64.tar.gz"
+      sha256 "74525dc665c8e18fac26ac23a9cb29e3d1183cb067764d18863bba8858606ea9"
 
-      def install
+      define_method(:install) do
         bin.install "dx"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/plumming/dx/releases/download/0.5.6/dx-darwin-arm64.tar.gz"
-      sha256 "e6e3f26d8a0d6d76bf8925954fd5f985c9920833d5ec368fbbe20a5951c7c96b"
+      url "https://github.com/plumming/dx/releases/download/0.6.1/dx-darwin-arm64.tar.gz"
+      sha256 "2e179eb87481a300860a4ea9e69190ae097758b17b63549df5dd2f01342ca2dd"
 
-      def install
+      define_method(:install) do
         bin.install "dx"
       end
     end
@@ -28,16 +28,16 @@ class Dx < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/plumming/dx/releases/download/0.5.6/dx-linux-amd64.tar.gz"
-      sha256 "5d7c0100f131e0b484e22fb2c6b774571d728897ddcb63bce91646b1b1605b30"
-      def install
+      url "https://github.com/plumming/dx/releases/download/0.6.1/dx-linux-amd64.tar.gz"
+      sha256 "e6ace9c3658edcf284d79a9c00da59598bb719c8fc358b85af166b024cbb30cb"
+      define_method(:install) do
         bin.install "dx"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/plumming/dx/releases/download/0.5.6/dx-linux-arm64.tar.gz"
-      sha256 "ff60d2b7caf5f57a40e43c529ae93fbedec49ee94a29e0d450eee1ea5275d2d8"
-      def install
+      url "https://github.com/plumming/dx/releases/download/0.6.1/dx-linux-arm64.tar.gz"
+      sha256 "aa289f5c8c8cac6b197264d90b4ead807308573411779029281c9b4c87037c3f"
+      define_method(:install) do
         bin.install "dx"
       end
     end
